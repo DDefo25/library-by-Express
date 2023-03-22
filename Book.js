@@ -1,14 +1,14 @@
-const { v4: uuid } = require("uuid");
+const { v4: uuid } = require('uuid');
 
 class Book {
   constructor(obj) {
     const {
-      title = "",
-      description = "",
-      authors = "",
-      favorite = "",
-      fileCover = "",
-      fileName = "",
+      title = '',
+      description = '',
+      authors = '',
+      favorite = '',
+      fileCover = '',
+      fileName = '',
     } = obj;
 
     this.id = uuid();

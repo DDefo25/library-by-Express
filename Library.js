@@ -1,5 +1,5 @@
-const { v4: uuid } = require("uuid");
-const Book = require("./Book");
+const { v4: uuid } = require('uuid');
+const Book = require('./Book');
 
 class Library {
   constructor() {
@@ -15,8 +15,8 @@ class Library {
   }
 
   get(id) {
-    const book = this.buffer.find((book) => book.id === id);
-    if (book === undefined) throw new Error("Книга не найдена в библиотеке");
+    const book = this.buffer.find((b) => b.id === id);
+    if (book === undefined) throw new Error('Книга не найдена в библиотеке');
     return book;
   }
 
@@ -25,23 +25,23 @@ class Library {
   }
 
   update(id, params) {
-    const book = this.buffer.find((book) => book.id === id);
-    if (book === undefined) throw new Error("Книга не найдена в библиотеке");
+    const book = this.buffer.find((b) => b.id === id);
+    if (book === undefined) throw new Error('Книга не найдена в библиотеке');
 
-    for (const [param, key] of Object.entries(params)) {
-      if (book[param] === undefined) {
-        throw new Error("Передано некорректное название параметра книги");
+    for (const [key, value] of Object.entries(params)) {
+      if (book[key] === undefined) {
+        throw new Error('Передано некорректное название параметра книги');
       }
 
-      book[param] = key;
+      book[key] = value;
     }
 
     return book;
   }
 
   remove(id) {
-    const idx = this.buffer.findIndex((book) => book.id === id);
-    if (idx === -1) throw new Error("Книга не найдена в библиотеке");
+    const idx = this.buffer.findIndex((b) => b.id === id);
+    if (idx === -1) throw new Error('Книга не найдена в библиотеке');
     this.buffer.splice(idx, 1);
   }
 }
