@@ -29,8 +29,10 @@ class Library {
     if (book === undefined) throw new Error("Книга не найдена в библиотеке");
 
     for (const [param, key] of Object.entries(params)) {
-      if (!book[param])
+      if (book[param] === undefined) {
         throw new Error("Передано некорректное название параметра книги");
+      }
+
       book[param] = key;
     }
 

@@ -48,7 +48,7 @@ app.delete("/api/books/:id", (req, res) => {
   const { id } = req.params;
 
   try {
-    library.delete(id);
+    library.remove(id);
     app.json({ success: true });
   } catch (error) {
     res.status(404).json({ error: error.message });
