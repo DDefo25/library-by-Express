@@ -5,8 +5,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Конфигурационный файл для задания с http.get()
-config.js
+#Архив книг
+books
 
 # Runtime data
 pids
